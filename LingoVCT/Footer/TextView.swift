@@ -189,7 +189,7 @@ struct TextView: View {
             }
     
     func callOpenAIAPI(inputText: String, sourceLanguage: String, targetLanguage: String) {
-            let apiKey = ""
+            let Key = "1"
             let endpoint = "1"
             let requestBody: [String: Any] = [
                 "model": "gpt-4",
@@ -208,7 +208,7 @@ struct TextView: View {
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.addValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
+            request.addValue("Bearer \(Key)", forHTTPHeaderField: "Authorization")
             request.httpBody = httpBody
             
             let task = URLSession.shared.dataTask(with: request) { data, response, error in

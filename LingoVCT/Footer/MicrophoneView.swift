@@ -190,7 +190,8 @@ struct MicrophoneView: View {
     
     func callOpenAIAPI() {
         isLoading = true
-        let apiKey = ""
+        let Key = "1"
+        let endpoint = "1"
         let requestBody: [String: Any] = [
             "model": "gpt-4",
             "messages": [
@@ -199,7 +200,7 @@ struct MicrophoneView: View {
             ]
         ]
         
-        guard let url = URL(string: ""),
+        guard let url = URL(string: endpoint),
               let httpBody = try? JSONSerialization.data(withJSONObject: requestBody, options: []) else {
             print("Invalid URL or request body")
             return
@@ -208,7 +209,7 @@ struct MicrophoneView: View {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(Key)", forHTTPHeaderField: "Authorization")
         request.httpBody = httpBody
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
