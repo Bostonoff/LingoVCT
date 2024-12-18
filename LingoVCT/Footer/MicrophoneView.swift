@@ -190,8 +190,7 @@ struct MicrophoneView: View {
     
     func callOpenAIAPI() {
         isLoading = true
-        let apiKey = "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"
-        let endpoint = "https://api.openai.com/v1/chat/completions"
+        let apiKey = ""
         let requestBody: [String: Any] = [
             "model": "gpt-4",
             "messages": [
@@ -200,7 +199,7 @@ struct MicrophoneView: View {
             ]
         ]
         
-        guard let url = URL(string: endpoint),
+        guard let url = URL(string: ""),
               let httpBody = try? JSONSerialization.data(withJSONObject: requestBody, options: []) else {
             print("Invalid URL or request body")
             return
