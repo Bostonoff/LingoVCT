@@ -190,8 +190,8 @@ struct MicrophoneView: View {
     
     func callOpenAIAPI() {
         isLoading = true
-        let Key = "1"
-        let endpoint = "1"
+        let apiKey = "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"
+        let endpoint = "https://api.openai.com/v1/chat/completions"
         let requestBody: [String: Any] = [
             "model": "gpt-4",
             "messages": [
@@ -209,7 +209,7 @@ struct MicrophoneView: View {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer \(Key)", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
         request.httpBody = httpBody
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
