@@ -189,7 +189,7 @@ struct TextView: View {
             }
     
     func callOpenAIAPI(inputText: String, sourceLanguage: String, targetLanguage: String) {
-            let apiKey = "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"
+            let apiKey = "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"
             let endpoint = "https://api.openai.com/v1/chat/completions"
             let requestBody: [String: Any] = [
                 "model": "gpt-4",
@@ -253,8 +253,10 @@ struct TextView: View {
     }
     func copyToClipboard(text: String, isInput: Bool) {
         if !text.isEmpty {
+            // Copy the text to the clipboard
             UIPasteboard.general.string = text
             
+            // Update the state to show the "copied" icon
             DispatchQueue.main.async {
                 if isInput {
                     isInputCopied = true
@@ -262,8 +264,8 @@ struct TextView: View {
                     isOutputCopied = true
                 }
             }
-
-           
+            
+            // Reset the state after 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 if isInput {
                     isInputCopied = false

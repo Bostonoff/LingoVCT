@@ -190,7 +190,7 @@ struct MicrophoneView: View {
     
     func callOpenAIAPI() {
         isLoading = true
-        let apiKey = "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"
+        let apiKey = "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"
         let endpoint = "https://api.openai.com/v1/chat/completions"
         let requestBody: [String: Any] = [
             "model": "gpt-4",
