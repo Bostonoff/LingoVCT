@@ -189,7 +189,7 @@ struct TextView: View {
             }
     
     func callOpenAIAPI(inputText: String, sourceLanguage: String, targetLanguage: String) {
-            let apiKey = "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"
+            let apiKey = "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"
             let endpoint = "https://api.openai.com/v1/chat/completions"
             let requestBody: [String: Any] = [
                 "model": "gpt-4",
